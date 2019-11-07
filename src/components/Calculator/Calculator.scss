@@ -1,6 +1,29 @@
 .calculator {
-  height: 30%;
+  height: 50%;
   width: 30%;
   border: #CACACA solid 1px;
   background: #DDDDDD;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  
+  form {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    input,
+    select {
+      height: 30px;
+      width: 90%; 
+      font-size: 15px;
+    }
+  
+    .submit {
+      width: 30%;
+    }
+  }
 }
