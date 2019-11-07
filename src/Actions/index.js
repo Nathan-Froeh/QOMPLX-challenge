@@ -13,7 +13,7 @@ export const setTotal = (total) => ({
   payload: total
 })
 
-export const setTipAmount = (tipAmount) => ({
-  type: 'SET_TIP_AMOUNT',
-  payload: tipAmount
+export const setTheme = (theme) => ({
+  type: 'SET_THEME',
+  payload: theme
 })

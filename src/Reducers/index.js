@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import {setTipReducer} from './setTipReducer';
 import {setTotalReducer} from './setTotalReducer';
-import {setTipAmountReducer} from './setTipAmountReducer';
+import {setThemeReducer} from './setThemeReducer';
 
 export const testReducer = (state = 'emtpy test', {type, payload}) => {
   switch(type) {
@@ -16,7 +16,7 @@ export const allReducers = combineReducers({
   reduxTest: testReducer,
   tip: setTipReducer,
   total: setTotalReducer,
-  tipAmount: setTipAmountReducer
+  tipAmount: setThemeReducer
 })
 
 export default allReducers;

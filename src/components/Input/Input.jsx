@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cleave from 'cleave.js/react';
 import {connect} from 'react-redux';
-import {setTip, setTotal, setTipAmount} from '../../Actions/index';
+import {setTip, setTotal, setTheme} from '../../Actions/index';
 
 export class Input extends Component {
   constructor() {
@@ -29,14 +29,14 @@ export class Input extends Component {
 
   style = (value) => {
     switch(true) {
-      case (value < 20):
-        this.props.tipAmount('low');
+      case (value < 20 && value !== ''):
+        this.props.theme('low');
         break;
-      case (value > 25):
-        this.props.tipAmount('high');
+      case (value > 25 && value !== ''):
+        this.props.theme('high');
         break;
       default:
-        this.props.tipAmount('normal');
+        this.props.theme('normal');
         break;
     }
   }
@@ -81,7 +81,7 @@ export class Input extends Component {
 export const mapDispatchToProps = dispatch => ({
   tip: (tip) => dispatch(setTip(tip)),
   total: (total) => dispatch(setTotal(total)),
-  tipAmount: (tipAmount) => dispatch(setTipAmount(tipAmount))
+  theme: (theme) => dispatch(setTheme(theme))
 })
 
 export default connect(null, mapDispatchToProps)(Input)
