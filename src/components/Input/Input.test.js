@@ -32,4 +32,17 @@ describe('Input', () => {
     expect(wrapper.state('totalBill')).toEqual(100)
   })
 
+  it('should set state', () => {
+    const e = {
+      target: {
+        name: 'tipAmount',
+        value: 10
+      }
+    }
+    instance.style = jest.fn()
+    expect(instance.style).toHaveBeenCalledTimes(0)
+    instance.handleChange(e)
+    expect(instance.style).toHaveBeenCalledTimes(1)
+  })
+
 })
