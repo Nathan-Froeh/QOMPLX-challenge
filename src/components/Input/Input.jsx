@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cleave from 'cleave.js/react';
 import {connect} from 'react-redux';
-import {setTip, setTotal} from '../../Actions/index';
+import {setTip, setTotal, setTipAmount} from '../../Actions/index';
 
 export class Input extends Component {
   constructor() {
@@ -15,6 +15,7 @@ export class Input extends Component {
 
   handleChange = (e) => {
     const {value, name} = e.target;
+    if(name === 'tipAmount') this.props.tipAmount(value)
     this.setState({[name]: value})
   }
 
@@ -24,7 +25,6 @@ export class Input extends Component {
     const totalTip = totalBill/tipAmount;
     this.props.tip(totalTip/partySize)
     this.props.total(totalBill/partySize)
-
   }
 
   render() {
@@ -66,7 +66,8 @@ export class Input extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   tip: (tip) => dispatch(setTip(tip)),
-  total: (total) => dispatch(setTotal(total))
+  total: (total) => dispatch(setTotal(total)),
+  tipAmount: (tipAmount) => dispatch(setTipAmount(tipAmount))
 })
 
 export default connect(null, mapDispatchToProps)(Input)

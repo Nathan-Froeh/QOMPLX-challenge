@@ -12,3 +12,8 @@ export const setTotal = (total) => ({
   type: 'SET_TOTAL',
   payload: total
 })
+
+export const setTipAmount = (tipAmount) => ({
+  type: 'SET_TIP_AMOUNT',
+  payload: tipAmount
+})
