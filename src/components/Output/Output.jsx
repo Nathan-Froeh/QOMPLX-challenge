@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 export class Output extends Component {
   render() {
@@ -6,15 +7,20 @@ export class Output extends Component {
       <section className='output'>
         <div>
           <label htmlFor="tip">Tip total:</label>
-          <p className='tip'>$Tip</p>
+          <p className='tip'>${this.props.tip}</p>
         </div>
         <div>
           <label htmlFor="total">Tip total:</label>
-          <p className='total'>$Total</p>
+          <p className='total'>${this.props.total}</p>
         </div>
       </section>
     )
   }
 }
 
-export default Output;
+export const mapStatehToProps = state => ({
+  tip: state.tip,
+  total: state.total
+})
+
+export default connect(mapStatehToProps)(Output)
