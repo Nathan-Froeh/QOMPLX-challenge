@@ -14,17 +14,22 @@ export class Input extends Component {
     const {value, name} = e.target;
     this.setState({[name]: value})
   }
-  
+
+  calculate = (e) => {
+    e.preventDefault()
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.calculate}>
         <Cleave placeholder='Total bill'
           name='totalBill'
           options={{numeral: true, numeralDecimalScale: 2}}
           value={this.state.totalBill}
           onChange={this.handleChange}
+          required
         />
-        <select>
+        <select required>
           <option value=''>Choose a tip percent</option>
           <option value={0}>0%</option>
           <option value={5}>5%</option>
@@ -39,6 +44,7 @@ export class Input extends Component {
           options={{numeral: true}}
           value={this.state.partySize}
           onChange={this.handleChange}
+          required
           />
         <input type="submit" className='submit' value='Calc tip'/>
         </form>
