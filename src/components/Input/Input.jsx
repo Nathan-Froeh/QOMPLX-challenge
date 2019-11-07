@@ -8,6 +8,7 @@ export class Input extends Component {
     super()
     this.state = {
       totalBill: '',
+      tipAmount: '',
       partySize: ''
     }
   }
@@ -19,6 +20,11 @@ export class Input extends Component {
 
   calculate = (e) => {
     e.preventDefault()
+    const {totalBill, tipAmount, partySize} = this.state;
+    const totalTip = totalBill/tipAmount;
+    this.props.tip(totalTip/partySize)
+    this.props.total(totalBill/partySize)
+
   }
 
   render() {
@@ -31,7 +37,7 @@ export class Input extends Component {
           onChange={this.handleChange}
           required
         />
-        <select required>
+        <select onChange={this.handleChange} name='tipAmount' required>
           <option value=''>Choose a tip percent</option>
           <option value={0}>0%</option>
           <option value={5}>5%</option>
