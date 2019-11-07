@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 import './Calculator.scss';
+import Cleave from 'cleave.js/react';
 
 class Calculator extends Component {
+  constructor() {
+    super()
+    this.state = {
+      totalBill: '',
+      partySize: ''
+    }
+  }
+
+  handleChange = (e) => {
+    const {value, name} = e.target;
+    this.setState({[name]: value})
+  }
 
   render() {
     return (
       <div className='calculator'>
         <form>
-          <input type="number" placeholder='Total Bill'/>
+          <Cleave placeholder='Total bill'
+            name='totalBill'
+            options={{numeral: true, numeralDecimalScale: 2}}
+            value={this.state.totalBill}
+            onChange={this.handleChange}
+          />
           <select>
             <option value=''>Choose a tip percent</option>
             <option value={0}>0%</option>
@@ -18,7 +36,12 @@ class Calculator extends Component {
             <option value={25}>25%</option>
             <option value={30}>30%</option>
           </select>
-          <input type="number" placeholder='Party size'/>
+          <Cleave placeholder='Party size'
+            name='partySize'
+            options={{numeral: true}}
+            value={this.state.partySize}
+            onChange={this.handleChange}
+            />
           <input type="submit" className='submit' value='Calc tip'/>
         </form>
         <section className='output'>
