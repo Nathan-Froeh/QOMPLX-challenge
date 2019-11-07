@@ -12,7 +12,7 @@ describe('Input', () => {
   }
 
   beforeEach(() => {
-    wrapper = shallow(<Input store={props}/>)
+    wrapper = shallow(<Input {...props}/>)
     instance = wrapper.instance()
   })
 
@@ -32,7 +32,7 @@ describe('Input', () => {
     expect(wrapper.state('totalBill')).toEqual(100)
   })
 
-  it('should set state', () => {
+  it('should call style func', () => {
     const e = {
       target: {
         name: 'tipAmount',
@@ -43,6 +43,17 @@ describe('Input', () => {
     expect(instance.style).toHaveBeenCalledTimes(0)
     instance.handleChange(e)
     expect(instance.style).toHaveBeenCalledTimes(1)
+  })
+
+  it('should run calculate', () => {
+    const e = {
+      preventDefault: jest.fn()
+    }
+    expect(props.tip).toHaveBeenCalledTimes(0)
+    expect(props.total).toHaveBeenCalledTimes(0)
+    instance.calculate(e)
+    expect(props.tip).toHaveBeenCalledTimes(1)
+    expect(props.total).toHaveBeenCalledTimes(1)
   })
 
 })
