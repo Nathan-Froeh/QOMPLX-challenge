@@ -84,7 +84,7 @@ describe('Input', () => {
     expect(instance.calculate).toHaveBeenCalledTimes(0)
   })
 
-  it('should not be submitable', () => {
+  it('should be submitable', () => {
     const e = {
       preventDefault: jest.fn()
     }
