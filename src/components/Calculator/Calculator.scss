@@ -1,0 +1,61 @@
+.calculator {
+  height: 400px;
+  width: 300px;
+  border: #CACACA solid 1px;
+  background: #DDDDDD;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  
+  form {
+    height: 60%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    input,
+    select {
+      height: 30px;
+      width: 90%; 
+      font-size: 15px;
+    }
+  
+    .submit {
+      width: 30%;
+    }
+  }
+
+  .output {
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      height: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      label,
+      p {
+        text-align: center;
+        margin: 0;
+      }
+
+      .high {
+        color: green;
+      }
+
+      .low {
+        color: red;
+      }
+
+      .normal {
+        color: black;
+      }
+    }
+  }
+}

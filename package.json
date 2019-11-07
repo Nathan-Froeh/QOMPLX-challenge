@@ -7,9 +7,19 @@
     "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "cleave": "^1.0.0-alpha.10",
+    "cleave.js": "^1.5.3",
+    "enzyme-adapter-react-15": "^1.4.1",
+    "jest": "^24.9.0",
+    "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-redux": "^7.1.3",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "sass": "^1.23.3",
+    "scss": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "react-test-renderer": "^15.6.2"
   }
 }
