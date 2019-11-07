@@ -15,7 +15,7 @@ export class Input extends Component {
 
   handleChange = (e) => {
     const {value, name} = e.target;
-    if(name === 'tipAmount') this.props.tipAmount(value)
+    if(name === 'tipAmount') this.style(value)
     this.setState({[name]: value})
   }
 
@@ -25,6 +25,20 @@ export class Input extends Component {
     const totalTip = totalBill/tipAmount;
     this.props.tip(totalTip/partySize)
     this.props.total(totalBill/partySize)
+  }
+
+  style = (value) => {
+    switch(true) {
+      case (value < 20):
+        this.props.tipAmount('low');
+        break;
+      case (value > 25):
+        this.props.tipAmount('high');
+        break;
+      default:
+        this.props.tipAmount('normal');
+        break;
+    }
   }
 
   render() {

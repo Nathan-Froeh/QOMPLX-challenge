@@ -6,12 +6,12 @@ export class Output extends Component {
     return (
       <section className='output'>
         <div>
-          <label htmlFor="tip">Tip total:</label>
-          <p className='tip'>${this.props.tip}</p>
+          <label htmlFor="tip" className={this.props.tipAmount}>Tip total:</label>
+          <p className={this.props.tipAmount}>${this.props.tip}</p>
         </div>
         <div>
-          <label htmlFor="total">Tip total:</label>
-          <p className='total'>${this.props.total}</p>
+          <label htmlFor="total" className={this.props.tipAmount}>Tip total:</label>
+          <p className={this.props.tipAmount}>${this.props.total}</p>
         </div>
       </section>
     )
@@ -20,7 +20,8 @@ export class Output extends Component {
 
 export const mapStatehToProps = state => ({
   tip: state.tip,
-  total: state.total
+  total: state.total,
+  tipAmount: state.tipAmount
 })
 
 export default connect(mapStatehToProps)(Output)
