@@ -38,6 +38,10 @@ export class Input extends Component {
           <option value={20}>20%</option>
           <option value={25}>25%</option>
           <option value={30}>30%</option>
+          <option value={35}>35%</option>
+          <option value={40}>40%</option>
+          <option value={45}>45%</option>
+          <option value={50}>50%</option>
           </select>
         <Cleave placeholder='Party size'
           name='partySize'
@@ -45,7 +49,7 @@ export class Input extends Component {
           value={this.state.partySize}
           onChange={this.handleChange}
           required
-          />
+        />
         <input type="submit" className='submit' value='Calc tip'/>
         </form>
     )
