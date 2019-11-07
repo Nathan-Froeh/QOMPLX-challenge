@@ -1,6 +1,6 @@
-QOMPLEX code challenge 1, the tip calculator
-By Nathan Froehlich
-completed 11-6-2019
+QOMPLEX code challenge 1, the tip calculator<br/>
+By Nathan Froehlich<br/>
+completed 11-6-2019<br/>
 
 # Stages complete
 - [x] MVP
