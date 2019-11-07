@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Cleave from 'cleave.js/react';
+import {connect} from 'react-redux';
+import {setTip, setTotal} from '../../Actions/index';
 
 export class Input extends Component {
   constructor() {
@@ -56,4 +58,9 @@ export class Input extends Component {
   }
 }
 
-export default Input
+export const mapDispatchToProps = dispatch => ({
+  tip: (tip) => dispatch(setTip(tip)),
+  total: (total) => dispatch(setTotal(total))
+})
+
+export default connect(null, mapDispatchToProps)(Input)
