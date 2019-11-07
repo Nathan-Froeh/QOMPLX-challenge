@@ -3,11 +3,10 @@ import Calculator from './Calculator';
 import {shallow} from 'enzyme';
 
 describe('Calculator', () => {
-  let wrapper, instance;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(<Calculator/>)
-    instance = wrapper.instance
   })
 
   it('should match snapshot', () => {
