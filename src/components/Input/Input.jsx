@@ -23,8 +23,8 @@ export class Input extends Component {
     e.preventDefault()
     const {totalBill, tipAmount, partySize} = this.state;
     const totalTip = totalBill/tipAmount;
-    this.props.tip(totalTip/partySize)
-    this.props.total(totalBill/partySize)
+    this.props.tip((totalTip/partySize).toFixed(2))
+    this.props.total((totalBill/partySize).toFixed(2))
   }
 
   style = (value) => {
