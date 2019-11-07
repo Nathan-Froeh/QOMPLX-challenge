@@ -77,4 +77,22 @@ describe('Input', () => {
     expect(props.theme).toHaveBeenCalledWith('high')
   })
 
+  it('should not be submitable', () => {
+    instance.calculate = jest.fn()
+    expect(instance.calculate).toHaveBeenCalledTimes(0)
+    wrapper.find('.submit').simulate('click')
+    expect(instance.calculate).toHaveBeenCalledTimes(0)
+  })
+
+  it('should not be submitable', () => {
+    const e = {
+      preventDefault: jest.fn()
+    }
+    instance.calculate = jest.fn()
+    expect(instance.calculate).toHaveBeenCalledTimes(0)
+    wrapper.setState({totalBill: 100, tipAmount: 10, partySize: 1})
+    wrapper.find('form').simulate('submit', e)
+    expect(instance.calculate).toHaveBeenCalledTimes(1)
+  })
+
 })
