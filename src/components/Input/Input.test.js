@@ -56,4 +56,25 @@ describe('Input', () => {
     expect(props.total).toHaveBeenCalledTimes(1)
   })
 
+  it('theme should be normal', () => {
+    const value = '';
+    expect(props.theme).toHaveBeenCalledTimes(0)
+    instance.style(value)
+    expect(props.theme).toHaveBeenCalledWith('normal')
+  })
+
+  it('theme should be low', () => {
+    const value = 15;
+    expect(props.theme).toHaveBeenCalledTimes(1)
+    instance.style(value)
+    expect(props.theme).toHaveBeenCalledWith('low')
+  })
+
+  it('theme should be high', () => {
+    const value = 30;
+    expect(props.theme).toHaveBeenCalledTimes(2)
+    instance.style(value)
+    expect(props.theme).toHaveBeenCalledWith('high')
+  })
+
 })
