@@ -11,7 +11,7 @@
     "cleave.js": "^1.5.3",
     "enzyme-adapter-react-15": "^1.4.1",
     "jest": "^24.9.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-redux": "^7.1.3",
